@@ -1,4 +1,4 @@
-console.log = function(){};
+// console.log = function(){};
 
 var mapQueues, jobTime, busyFOff = false, multiplier, metusers = {},
     app = require('express')(),
