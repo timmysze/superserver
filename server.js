@@ -271,6 +271,18 @@ app.get('/abort/hammerdown', function(req, res) {
   });
 });
 
+app.get('/reset', function(req, res) {
+CamelotStore.update({"job": 26}, {
+      "job": 26
+    }, {}, function(err, result) {
+      if (err === null) {
+        res.send(200);
+      } else {
+        res.send(503);
+      }
+    });
+});
+
 server.listen(process.env.PORT, function() {
   var addr = server.address();
   console.log('Listening on http://' + addr.address + ':' + addr.port);
