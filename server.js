@@ -17,9 +17,9 @@ io.configure(function () {
   io.set("polling duration", 10); 
 });
 
-io.set('heartbeat timeout', 240);
-io.set('heartbeat interval', 180);
-io.set('close timeout', 240);
+io.set('heartbeat timeout', 2400);
+io.set('heartbeat interval', 1800);
+io.set('close timeout', 2400);
 io.set('log level', 5);
 var innKeeper = {
   clients: {},
