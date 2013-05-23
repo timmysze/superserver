@@ -20,7 +20,7 @@ io.configure(function () {
 io.set('heartbeat timeout', 240);
 io.set('heartbeat interval', 180);
 io.set('close timeout', 240);
-io.set('log level', 2);
+io.set('log level', 5);
 var innKeeper = {
   clients: {},
   ready: [],
@@ -271,16 +271,17 @@ app.get('/abort/hammerdown', function(req, res) {
   });
 });
 
-app.get('/reset', function(req, res) {
-CamelotStore.update({"job": 26}, {
-      "job": 26
-    }, {}, function(err, result) {
-      if (err === null) {
-        res.send(200);
-      } else {
-        res.send(503);
-      }
-    });
+
+app.get('/abort/reset', function(req, res) {
+  CamelotStore.update({"job": 26}, {
+    "job": 26,
+    "active": false
+  }, {}, function(err, result) {
+    if (err === null) {
+    } else {
+      // console.log("ERROR writing to Camelot DB: \n", err);
+    }
+});
 });
 
 server.listen(process.env.PORT, function() {
