@@ -242,6 +242,10 @@ io.sockets.on('connection', function (Pawn) {
   });
 });
 
+app.get('/', function(req,res) {
+  res.send(200);
+});
+
 app.get('/job/:n/:depth', function(req, res) {
   CamelotStore.findOne({"job": 26}, {}, function(err, CamelotSnapshot) {
     console.log(err)
