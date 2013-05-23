@@ -271,7 +271,7 @@ app.get('/abort/hammerdown', function(req, res) {
   });
 });
 
-server.listen(process.env.port, function() {
+server.listen(process.env.PORT, function() {
   var addr = server.address();
   console.log('Listening on http://' + addr.address + ':' + addr.port);
 });
