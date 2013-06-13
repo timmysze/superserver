@@ -3,7 +3,7 @@
 var mapQueues, jobTime, busyFOff = false, multiplier, metusers = {},
     app = require('express')(),
     CamelotStore,
-    reactiveDB = require('mongodb').Db.connect('mongodb://NQMongo:cXbkFvOEBdmLEs23SXIQY2Xlm4._2VdFlhyBsIeO2k8-@ds041177.mongolab.com:41177/NQMongo', function(err, db) {
+    reactiveDB = require('mongodb').Db.connect('mongodb://temp:temp@ds029658.mongolab.com:29658/queensdemo', function(err, db) {
       (err === null) && (db) && console.log('Connected to Camelot DB');
       err && console.log(err);
       CamelotStore = db.collection("Camelot");
